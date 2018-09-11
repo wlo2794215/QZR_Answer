@@ -1,0 +1,18 @@
+﻿@model Answer.Model.Answer.Emoloyee
+@{Layout = null;}
+@{
+    ViewBag.Title = "Delete";
+}
+<h3 class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span>  Are you sure you want to delete this?</h3>
+<hr />
+<div>
+    @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "sqldiv" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            @Ajax.ActionLink("Calcel", "SelectSQL", null, new AjaxOptions { UpdateTargetId = "sqldiv" }, new { @class = "btn btn-danger" })
+            <input type="submit" value="Delete" class="btn btn-warning" />
+
+        </div>
+    }
+</div>

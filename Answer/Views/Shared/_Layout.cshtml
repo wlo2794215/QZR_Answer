@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Scripts/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/Scripts/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/Scripts/morris.css" rel="stylesheet" />
+    <link href="~/Scripts/font-awesome.min.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @Html.ActionLink("QZR_Page", "Index", new { area = "" }, new { @class = "navbar-brand" })
+        <ul class="nav navbar-top-links navbar-right">       
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">     
+                    <span> <span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-chevron-down"></span></span>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user"></span> User Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                    </li>
+                </ul>
+            </li>  
+        </ul>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>       
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-chevron-down"></span> Data Management</a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Page1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page2</a>
+                            </li>
+                        </ul>     
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-chevron-down"></span> UI Elements</a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="panels-wells.html">Panels and Wells</a>
+                            </li>
+                            <li>
+                                <a href="buttons.html">Buttons</a>
+                            </li>
+                            <li>
+                                <a href="notifications.html">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="typography.html">Typography</a>
+                            </li>
+                            <li>
+                                <a href="icons.html"> Icons</a>
+                            </li>
+                            <li>
+                                <a href="grid.html">Grid</a>
+                            </li>
+                        </ul> 
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-chevron-down"></span> Multi-Level Dropdown</a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Page1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page2</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-chevron-down"></span>Other</a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Link1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link4</a>
+                                    </li>
+                                </ul>                                
+                            </li>
+                        </ul>                       
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-chevron-down"></span> Client <span class="glyphicon glyphicon-phone"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="blank.html">Link1</a>
+                            </li>
+                            <li>
+                                <a href="login.html">Link2</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+    <div class="container body-content ">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -QZR_Answer</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/metisMenu.min.js"></script>
+<script src="~/Scripts/morris.min.js"></script>
+<script src="~/Scripts/morris-data.js"></script>
+<script src="~/Scripts/sb-admin-2.js"></script>
+<script src="~/Scripts/raphael.min.js"></script>

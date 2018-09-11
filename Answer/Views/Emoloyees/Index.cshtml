@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Answer.Model.Answer.Emoloyee>
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+<div class="row" style="height:50px"></div>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" >
+        @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "sqldiv", Url = Url.Action("SelectSQL") }))
+        {
+            <p>
+                @Ajax.ActionLink("Create", "Create", null, new AjaxOptions { UpdateTargetId = "sqldiv" }, new { @class = "btn btn-success" })
+                @Html.TextBox("searchString", null, new { @placeholder = "Search EmoloyeeName" })
+                <input type="submit" value="Search" class="btn btn-success" />
+            </p>
+        }
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" id="sqldiv" style="overflow-y:auto;overflow-X:hidden;height:350px;">
+        <table class="table" id="table">
+            @Html.Partial("SelectSQL")
+        </table>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<div class="modal fade text-center" id="CreatDialog">
+    <div class="modal-dialog">
+        <div class="modal-body">
+            <div class="modal-content modal-dialog-centered">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="CreatDialog2"></div>
